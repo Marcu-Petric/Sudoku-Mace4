@@ -1,18 +1,7 @@
 import sys
 import subprocess
 from Src.Model.GridToProverTransformations import put_in_input_file, get_from_output_file
-
-#TODO: Put your absolute paths
-INPUT_FILE_PATH = ""
-OUTPUT_FILE_PATH = ""
-PROVER9_BIN_PATH = ""
-
-
-
-def main():
-    """
-    TODO: Start gui, get input from user, etc. Call solve_sudoku(matrix) then display the solved puzzle
-    """
+from Src.App import INPUT_FILE_PATH, PROVER9_BIN_PATH, OUTPUT_FILE_PATH
 
 
 def solve_sudoku(sudoku_matrix):
@@ -29,11 +18,3 @@ def solve_sudoku(sudoku_matrix):
     solution = get_from_output_file(OUTPUT_FILE_PATH)
 
     return solution
-
-
-
-
-
-
-if __name__ == "__main__":
-    main()

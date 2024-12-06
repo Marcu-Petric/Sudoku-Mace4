@@ -1,6 +1,5 @@
 import unittest
-import subprocess
-from Src.Controller.Application import solve_sudoku
+from Src.App import solve_sudoku
 
 class TestSudokuSolver(unittest.TestCase):
     def test_solve_sudoku(self):
