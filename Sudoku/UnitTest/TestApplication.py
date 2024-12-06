@@ -1,5 +1,5 @@
 import unittest
-from Src.App import solve_sudoku
+from Src.Controller.Controller import solve_sudoku
 
 class TestSudokuSolver(unittest.TestCase):
     def test_solve_sudoku(self):
