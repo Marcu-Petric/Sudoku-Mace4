@@ -1,5 +1,5 @@
 import unittest
-from Src.GridToProverTransformations import insert_input_in_file_content, to_mace4_input, to_grid
+from Src.Model.GridToProverTransformations import insert_input_in_file_content, to_mace4_input, to_grid
 
 
 class MyTestCase(unittest.TestCase):
