@@ -35,6 +35,7 @@ def put_in_input_file(gui_matrix, path):
 
     :param gui_matrix: 2D list representing a Sudoku puzzle.
     :param path: Path to the input file.
+    :return: the initial file content
     """
     with open(path, "r") as file:
         file_content = file.read()
@@ -44,6 +45,18 @@ def put_in_input_file(gui_matrix, path):
 
     with open(path, "w") as file:
         file.write(file_with_input)
+
+    return file_content
+
+def reset_input(initial_file, path):
+    """
+    Resets input file to it's initial(template) content
+
+    :param initial_file: input file template content
+    :param path: Path to the input file.
+    """
+    with open(path, "w") as file:
+        file.write(initial_file)
 
 
 def to_grid(file_content, size):
