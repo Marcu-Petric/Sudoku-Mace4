@@ -1,7 +1,7 @@
 import sys
 import subprocess
 from Src.Model.GridToProverTransformations import put_in_input_file, get_from_output_file, reset_input
-from Src.App import INPUT_FILE_PATH, PROVER9_BIN_PATH, OUTPUT_FILE_PATH
+from Src.Config import INPUT_FILE_PATH, PROVER9_BIN_PATH, OUTPUT_FILE_PATH
 
 
 def solve_sudoku(sudoku_matrix):
