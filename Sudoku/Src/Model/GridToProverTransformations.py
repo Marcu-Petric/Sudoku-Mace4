@@ -11,7 +11,7 @@ def to_mace4_input(m):
     for i, row in enumerate(m):
         for j, element in enumerate(row):
             if element:
-                inputs += f"f({i},{j}) = {element-1}.\n"
+                inputs += f"cell({i},{j}) = {element-1}.\n"
     return inputs
 
 
@@ -67,7 +67,7 @@ def to_grid(file_content, size):
     :param size: Nr. of rows and column of the wanted matrix (e.g., 9 for a 9x9 Sudoku).
     :return: 2D matrix.
     """
-    pattern = r"function\(f\(_,_\), \[([^\]]+)\]\)"
+    pattern = r"function\(cell\(_,_\), \[([^\]]+)\]\)"
     match = re.search(pattern, file_content)
     outputMatrix = []
     if match:
