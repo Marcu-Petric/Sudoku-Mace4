@@ -1,0 +1,50 @@
+assign(domain_size, 9).      % for a 9x9 puzzle
+assign(max_seconds, 60).      % time limit
+
+formulas(rules).
+
+%Each row has exactly 9 unique digits
+
+all r all c1 all c2 (cell(r, c1) = cell(r, c2) -> c1 = c2). %maxim 1
+all r all digit exists c (cell(r, c) = digit).              %minim 1
+
+%Each column has exactly 9 unique digits
+
+all r1 all r2 all c (cell(r1, c) = cell(r2, c) -> r1 = r2). %maxim 1
+all c all digit exists r (cell(r, c) = digit).              %minim 1
+
+%We have 9 big squares (or regions) in the 9x9 sudoku puzzles : {0,1,2,3,4,5,6,7,8}.
+%Each square is composed of the intersection of 3 rows and 3 columns :
+%{0,1,2} - left,
+%{3,4,5} - middle,
+%{6,7,8} - right.
+
+all a (same_square(a,a)).
+all a all b (same_square(a, b) -> same_square(b, a)).
+all a all b all c (same_square(a, b) & same_square(b, c) -> same_square(a, c)).
+
+%The same square
+same_square(0, 1).
+same_square(2, 1).
+same_square(3, 4).
+same_square(5, 4).
+same_square(6, 7).
+same_square(8, 7).
+
+%Not the same square
+-same_square(5, 2).
+-same_square(5, 8).
+-same_square(8, 2).
+
+%If both the columns and the rows of a pair of cells are in the same square, those cells are in the same square.
+%Each square has 9 unique digits.
+
+all r1 all r2 all c1 all c2 (same_square(r1, r2) & same_square(c1, c2) & cell(r1, c1) = cell(r2, c2) -> r1 = r2 & c1 = c2).
+
+end_of_list.
+
+formulas(puzzle).
+
+TODO: insert input here
+
+end_of_list.
