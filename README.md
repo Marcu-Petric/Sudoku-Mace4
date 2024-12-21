@@ -1,4 +1,4 @@
-# Sudoku Solver Documentation
+# Sudoku Solver with Mace4
 
 ## Introduction
 
