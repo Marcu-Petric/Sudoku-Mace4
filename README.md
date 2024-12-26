@@ -1,4 +1,6 @@
 # Sudoku Solver with Mace4
+
+## Introduction
 This Sudoku-solving application is designed to integrate a user-friendly interface with logic-solving capabilities. The core functionality is built around the Mace4 theorem prover.
 
 Users interact with a graphical user interface (GUI) to input their Sudoku puzzles. The application processes the input puzzle by converting it into a Mace4-compatible input. Once the puzzle is formatted, the application invokes the Mace4 program to compute the solution. The solved puzzle is then parsed and displayed back to the user on the GUI.
